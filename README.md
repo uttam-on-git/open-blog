@@ -1,3 +1,1 @@
-##A fully functional blog application
-
-
+## A fully functional blog application
