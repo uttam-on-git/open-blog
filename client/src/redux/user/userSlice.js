@@ -14,7 +14,7 @@ const userSlice = createSlice({
             state.loading = true;
             state.error = null;
         },
-        sighInSuccess: (state, action) => {
+        signInSuccess: (state, action) => {
             state.currentUser = action.payload;
             state.loading = false;
             state.error = null;
@@ -26,5 +26,5 @@ const userSlice = createSlice({
     } 
 });
 
-export const { sighInSuccess, signInFailure, signInStart} = userSlice.actions;
- export default userSlice.reducer;
+export const { signInSuccess, signInFailure, signInStart} = userSlice.actions;
+export default userSlice.reducer;
