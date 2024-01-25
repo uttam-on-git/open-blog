@@ -30,7 +30,7 @@ export default function SignUp() {
       if(data.success === false) {
         return setErrorMessage(data.message);
       }
-      setLoading(false);
+      setLoading(false); 
       if(res.ok) {
         navigate('/sign-in')
       }
