@@ -5,6 +5,7 @@ import { app } from "../firebase";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { HiOutlineExclamationCircle } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 import {
   getDownloadURL,
   getStorage,
@@ -22,7 +23,7 @@ import {
 } from "../redux/user/userSlice";
 
 export default function DashProfile() {
-  const { currentUser, error } = useSelector((state) => state.user);
+  const { currentUser, error, loading } = useSelector((state) => state.user);
   const [imageFile, setImageFile] = useState(null);
   const [imageFileUrl, setImageFileUrl] = useState(null);
   const [imageFileUploadProgress, setImageFileUploadProgress] = useState(null);
@@ -221,9 +222,19 @@ export default function DashProfile() {
           placeholder="password"
           onChange={handleChange}
         />
-        <Button type="submit" outline>
-          Update
+        <Button type="submit" outline disabled={loading || imageFileUploading}>
+          {loading ? 'Loading...' : 'Update'}
         </Button>
+        {
+          currentUser.isAdmin && (
+            <Link to={'/create-post'}>
+             <Button type="button" className="w-full">
+              Create a post
+            </Button>
+            </Link>
+           
+          )
+        }
       </form>
       <div className="text-red-400 flex justify-between gap-5">
         <span onClick={() => setShowModal(true)} className="cursor-pointer">Delete Account</span>
