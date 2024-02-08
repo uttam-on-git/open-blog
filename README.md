@@ -1,6 +1,6 @@
 #  <span style="color:blue;">Open Blog </span>
 
-A blog post app where users are allowed   
+A blog post application where users are allowed to create post and there is an admin dashboard to see users and past blogs.
 
 ##  <span style="color:00ff00;">Technologies</span>
 
