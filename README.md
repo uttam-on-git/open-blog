@@ -1,4 +1,4 @@
-#  <span style="color:blue;">Open Blog </span>
+#  <span style="color:blue;">📝 Open Blog </span>
 
 A blog post application where users are allowed to create post and there is an admin dashboard to see users and past blogs.
 
